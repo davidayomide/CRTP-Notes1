@@ -76,6 +76,12 @@ Then run
 ```powershell
 $ Get-DomainGPO -Identity "{AB306569-220D-43FF-BO3B-83E8F4EF8081}"
 ```
+You cant only see the policy on the sysvol of the domain controller of your target env
+
+- Get all the lists of endpoints in an OU
+```powershell
+$ (Get-DomainOU -Identity StudentMachine).distinguishedname | %{Get-DomainComputer -SearchBase $_} | select name
+```
 
 
 # **Learning Objective 2**
