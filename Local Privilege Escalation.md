@@ -60,11 +60,6 @@ $ Invoke-PrivEsc
 $ winPEASx64.exe
 ```
 
-```
-# Add users to a local group by abusing the services where users can change arguments to the binary:
-https://powersploit.readthedocs.io/en/latest/Privesc/Invoke-ServiceAbuse/ 
-```
-
 **Feature Abuse**
 
 • What we have been doing up to now (and will keep doing further in the
@@ -142,10 +137,21 @@ C:\AD\Tools\netcat-win32-1.12\nc64.exe -lvp 443
 # **Learning Objective 5**
 
 
-- Exploit a service on dcorp-studentx and elevate privileges to local administrator.
-- Identify a machine in the domain where studentx has local administrative access. 
+- Exploit a service on dcorp-studentx and elevate privileges to local administrator:
+- Solution:
+```
+# Add users to a local group by abusing the services where users can change arguments to the binary:
+https://powersploit.readthedocs.io/en/latest/Privesc/Invoke-ServiceAbuse/ 
+```
+  
+- Identify a machine in the domain where studentx has local administrative access.
+- Solution
+```
+. C:\AD\Tools\Find-PSRemotingLocalAdminAccess.ps1
+Find-PSRemotingLocalAdminAccess
+```
+  
 - Using privileges of a user on Jenkins on 172.16.3.11:8080, get admin privileges on 172.16.3.11 - the dcorp-ci server
-
 
 ## **Solution**
 
